@@ -1,13 +1,13 @@
 # Exno:1
 Data Cleaning Process
 
-# AIM
+# AIM:
 To read the given data and perform data cleaning and save the cleaned data to a file.
 
-# Explanation
+# Explanation:
 Data cleaning is the process of preparing data for analysis by removing or modifying data that is incorrect ,incompleted , irrelevant , duplicated or improperly formatted. Data cleaning is not simply about erasing data ,but rather finding a way to maximize datasets accuracy without necessarily deleting the information.
 
-# Algorithm
+# Algorithm:
 STEP 1: Read the given Data
 
 STEP 2: Get the information about the data
@@ -20,7 +20,7 @@ STEP 5: Remove outliers using IQR
 
 STEP 6: Use zscore of to remove outliers
 
-# Coding and Output
+# Coding and Output:
 ```
 import pandas as pd
 df=pd.read_csv('/content/SAMPLEIDS.csv')
@@ -82,8 +82,8 @@ df
 ```
 ![Screenshot 2024-02-23 155715](https://github.com/LINGARAJA-L/exno1/assets/129825857/ebeda40e-32f2-450d-a2fb-e4c2d1103d04)
 
-# Outlier Detection and Removal 
-## Coding and Output
+# Outlier Detection and Removal :
+## Coding and Output:
 ```Python
 import pandas as pd
 import seaborn as sns
@@ -96,7 +96,7 @@ dff
 
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/28a59ebe-bdcc-4f04-93be-c29c353cdcb0)
 
-### 15) Boxplot
+### 15) Boxplot:
 ```Python
 dsf=sns.boxplot(dff)
 ```
@@ -106,7 +106,7 @@ dsf=sns.boxplot(dff)
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/9876bce8-ef7f-49b2-8a97-114162113c71)
 
 
-### 16) Scatterplot
+### 16) Scatterplot:
 ```Python
 dsf=sns.scatterplot(dff)
 ```
@@ -117,7 +117,7 @@ dsf=sns.scatterplot(dff)
 
 
 
-### 17) IQR
+### 17) IQR:
 ```Python
 q1=dff.quantile(0.25)
 q2=dff.quantile(0.5)
@@ -132,7 +132,7 @@ iqr
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/5ce6b72c-20d6-4542-a6ef-f607de82fc3d)
 
     
-### 18) Checking the high and low value
+### 18) Checking the high and low value:
 ```Python
 low=q1-1.5*iqr
 low
@@ -149,7 +149,7 @@ high
 
 
     
-### 19) Filtering outlier value
+### 19) Filtering outlier value:
 ```Python
 dff=dff[((dff>=low)&(dff<=high))]
 dff
@@ -160,7 +160,7 @@ dff
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/a350867b-a6c0-4d3a-94fa-7e13b6874499)
 
     
-### 20) Dropping the null value
+### 20) Dropping the null value:
 ```Python
 dff.dropna()
 ```
@@ -172,7 +172,7 @@ dff.dropna()
 
 
     
-### 21) Box plotting after filtering outlier
+### 21) Box plotting after filtering outlier:
 ```Python
 sns.boxplot(data=dff)
 ```
@@ -182,7 +182,7 @@ sns.boxplot(data=dff)
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/b26c5fa9-3286-4299-a3e0-462659b72e6d)
 
   
-### 22) Z Score
+### 22) Z Score:
 ```Python
 import pandas as pd
 import seaborn as sns
@@ -197,7 +197,7 @@ ds
 
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/c81cd121-42a2-4608-892b-33755423d018)
 
-### 23) Z Score
+### 23) Z Score:
 ```Python
 import pandas as pd
 import seaborn as sns
@@ -213,7 +213,7 @@ ds
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/c81cd121-42a2-4608-892b-33755423d018)
 
     
-### 24) Z Score
+### 24) Z Score:
 ```Python
 sns.boxplot(data=ds)
 ```
@@ -223,7 +223,7 @@ sns.boxplot(data=ds)
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/a1afb418-e531-4eaa-9f0f-db5be7b0c20c)
 
     
- ### 25) Z Score
+ ### 25) Z Score:
 ```Python
 z=np.abs(stats.zscore(ds))
 z
@@ -235,7 +235,7 @@ z
 
 
 
-### 26)Z score 
+### 26)Z score :
 ```Python
 print(ds[z['weight']>3])
 ```
@@ -244,5 +244,5 @@ print(ds[z['weight']>3])
 #### OUTPUT:
 ![image](https://github.com/LATHIKESHWARAN/exno1/assets/119393556/5deaf50a-9342-48f4-ae99-1cc751d39320)
 
-# Result
+# Result:
 The data clearning has beeen done successfully.
